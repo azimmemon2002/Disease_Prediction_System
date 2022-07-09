@@ -44,7 +44,7 @@ def index(request):
 
 def about(request):
     if request.method == "GET":
-        return render(request, "aboutpage/extra/ex.html")
+        return render(request, "aboutpage/about.html")
     else:
         return HttpResponse("Something Went Wrong!")
 

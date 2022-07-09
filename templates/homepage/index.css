@@ -3,7 +3,7 @@ h1 {
     color: red;
     text-align: center;
 
-}
+} 
 
 .main_frame {
     width: 100%;
@@ -13,8 +13,8 @@ h1 {
 }
 
 .card_body {
-    margin: 90px 0 0 150px;
-    height: 40%;
+    margin: 90px 0 0 150px; 
+    /* height: 40%; */
     width: 80%;
     background: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);

@@ -1,0 +1,303 @@
+<!--{% load static %}-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <head>
+        <!-- Required meta tags -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+              crossorigin="anonymous">
+    </head>
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "Times New Roman", Times, serif;
+            /* font-family:sans-serif; */
+        }
+
+        .page-header h3 {
+            text-align: left;
+            text-decoration: none;
+            text-shadow: none;
+            color: white;
+            font-size: 25px;
+            font-weight: bold;
+            color: #05386b;
+        }
+
+        .page-header h6 {
+            text-align: left;
+            text-decoration: none;
+            text-shadow: none;
+            color: white;
+            padding-left: 7px;
+            font-weight: lighter;
+            color: #05386b;
+        }
+
+        .page-header h3:hover {
+            color: red;
+        }
+
+        .navbar-nav .nav-item .nav-link {
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            display: block;
+            border-radius: 40px;
+            /* border: 3px solid  white; */
+            border: 3px solid #f8f9fa;
+        }
+
+
+        .navbar-nav .nav-item .nav-link:hover {
+            background: linear-gradient(to right, #0084ff, #06ff30);
+            border: solid #05386b;
+        }
+
+        .nav-link:hover {
+            color: white;
+        }
+
+        #logout,
+        #signin a,
+        #signup a {
+            color: #05386b;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 40px;
+            border: solid white;
+            color: black;
+            background: linear-gradient(to right, #0084ff, #06ff30);
+
+        }
+
+
+        #logout:hover,
+        #signin a:hover,
+        #signup a:hover {
+            border-radius: 40px;
+            color: white;
+            background: linear-gradient(to right, #0084ff, #06ff30);
+            border: solid #05386b;
+
+        }
+    </style>
+</head>
+
+<body>
+<div class="container-fluid" style="padding: 0 0 0 0;">
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="page-header mt-1 mb-1 ml-1 ">
+            <h3 id="page_title">Disease Analysis & Prediction System</h3>
+            <h6>Be your own doctor </h6>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent"><span class="navbar-toggler-icon"></span></button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="dj_home" onMouseOver="this.style.color='white'"
+                       onMouseOut="this.style.color='#05386b'" style="color:#05386b">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="dj_about" onMouseOver="this.style.color='white'"
+                       onMouseOut="this.style.color='#05386b'" style="color:#05386b">About</a>
+                </li>
+
+
+                {% if user.is_authenticated %}
+                {% if user.patient %}
+
+                <li class="nav-item ml-2">
+                    <a class="nav-link" href="{% url 'patient_ui' %}" style="color: rgb(56, 247, 8);">Hello,
+                        {{user.patient.name}}
+                    </a>
+                </li>
+                <li class="nav-item ml-2">
+                    <a class="nav-link" href="{% url 'patient_ui' %}" onMouseOver="this.style.color='white'"
+                       onMouseOut="this.style.color='#05386b'" style="color:#05386b">Profile</a>
+                </li>
+
+                {% endif %}
+                {% if user.doctor %}
+
+                <li class="nav-item ml-2">
+                    <a class="nav-link" href="" style="color: rgb(250, 0, 0);">Hello, Dr.
+                        {{user.doctor.name}}
+                    </a>
+                </li>
+                <li class="nav-item ml-2">
+                    <a class="nav-link" href="" onMouseOver="this.style.color='white'"
+                       onMouseOut="this.style.color='#05386b'" style="color:#05386b">Profile</a>
+                </li>
+
+
+                {% endif %}
+                {% if user.is_superuser %}
+
+                <li class="nav-item ml-2">
+                    <a class="nav-link" href="" style="color: rgb(253, 186, 1);">Admin:
+                        {{user.username}}
+                    </a>
+                </li>
+                <li class="nav-item ml-2">
+                    <a class="nav-link" href="" onMouseOver="this.style.color='white'"
+                       onMouseOut="this.style.color='#05386b'" style="color:#05386b">Profile</a>
+                </li>
+
+
+                {% endif %}
+
+                <li class="nav-item ml-2">
+                    <button id="logout" class="btn btn-danger" data-toggle="modal"
+                            data-target="#logout-modal">Log out
+                    </button>
+                </li>
+
+
+                <div class="modal fade" id="logout-modal" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4>Logout <i class="fa fa-lock"></i></h4>
+                            </div>
+                            <div class="modal-body"><i class="fa fa-question-circle"></i><span
+                                    style="color: rgb(42, 187, 6);">{{user.patient.name}}</span>, Are you sure
+                                you
+                                want to
+                                log-off?
+                            </div>
+                            <div class="modal-footer"><a href="{% url 'logout' %}"
+                                                         class="btn btn-primary btn-block">Logout</a></div>
+                        </div>
+                    </div>
+                </div>
+
+                {% else %}
+
+                <li id="signup">
+                    <a class="nav-link" data-toggle="modal" data-target=".bd-example-modal-lg2">Signup</a>
+                </li>
+                <li id="signin">
+                    <a class="nav-link" data-toggle="modal" data-target=".bd-example-modal-lg">Signin</a>
+                </li>
+
+                {% endif %}
+
+            </ul>
+        </div>
+    </nav>
+
+    <!-- use below part in index html -->
+
+
+    <!-- Larger card to display sign in as admin doctor patient -->
+
+
+    <div class="modal fade bd-example-modal-lg2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <center>
+                    <h1>Sign-Up As</h1>
+                </center>
+                <br><br>
+
+                <center>
+                    <form>
+                        <div class="container mt-5 mb-5 ml-5 mr-5">
+                            <div class="row">
+
+                                <div class="col">
+                                    <a href="">
+                                        <img alt="doctor" src="" class="img">
+                                    </a>
+                                </div>
+
+                                <div class="col">
+                                    <a href="">
+                                        <img alt="patient" src="{" class="img">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </center>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <center>
+                    <h1>Sign-In As</h1>
+                </center>
+                <br><br>
+
+                <center>
+                    <form>
+                        <div class="container mt-5 mb-5">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="">
+                                        <img alt="admin" src="" class="img">
+                                    </a>
+                                </div>
+
+                                <div class="col">
+                                    <a href="signin_page\signin_page.html">
+                                        <img alt="doctor" src="" class="img">
+                                    </a>
+                                </div>
+
+                                <div class="col">
+                                    <a href="">
+                                        <img alt="patient" src="{" class="img">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </center>
+
+            </div>
+        </div>
+    </div>
+
+    {% block body %}
+
+    {% endblock %}
+
+
+</div>
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+</html>
+

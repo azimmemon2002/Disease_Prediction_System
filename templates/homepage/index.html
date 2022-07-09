@@ -1,6 +1,18 @@
 {% extends 'basic.html' %} {% load static %} {% block head %}
 
+<link rel="stylesheet" href="{% static 'aboutpage\about.css' %}">
 <link rel="stylesheet" href="{% static 'homepage\index.css' %}" />
+
+<style>
+
+  #signup {
+
+    height: 48px;
+    width: 90px;
+    margin-left: 45%;
+    text-align:center;
+  }
+</style>
 {% endblock head %}
 
 
@@ -20,8 +32,13 @@
       Symptoms. The User will be
       able to share their symptoms and the system will process the patient’s symptoms to check for various illness that
       could be associated with it.</p>
+
+   
+      <a id="signup" href="{% url 'about' %}" target="_blank">About</a>
+
+    </p>
+
   </div>
 
 </div>
-
 {% endblock body %}
