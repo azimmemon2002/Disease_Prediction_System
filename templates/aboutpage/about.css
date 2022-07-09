@@ -1,0 +1,48 @@
+.main_frame {
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+}
+
+.greetings {
+    background-color: rgb(105, 105, 105);
+
+
+}
+
+.greeting {
+    text-align: center;
+    color: rgb(4, 0, 255);
+    font-weight: lighter;
+
+}
+
+.greeting1 {
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+.card {
+    margin: 80px 0 0 120px;
+    height: 40%;
+    width: 80%;
+    color: red;
+    background: white;
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2);
+    border-radius: 5px 0px 5px 0px;
+    transition: 0.3s;
+    text-align: left;
+    padding: 10px 10px 10px 20px;
+}
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+    padding: 2px 16px;
+}
+
+.card label{
+    overflow: hidden;
+}

@@ -1,0 +1,40 @@
+body{
+    background: linear-gradient(to right, #0084ff, #06ff30);
+}
+
+.table_body{
+    background: White;
+
+}
+.btn_profile{
+    width: 100px;
+    height: 40px;
+    text-decoration: none;
+    border-radius: 10px;
+    border: solid white;
+    background: linear-gradient(to right, #0084ff, #06ff30);
+}
+
+.btn_consult{
+    width: 90px;
+    height: 40px;
+    text-decoration: none;
+    border-radius: 10px;
+    border: solid white;
+    background: linear-gradient(to right, #0084ff, #06ff30);
+}
+
+.btn_consult:hover,
+.btn_profile:hover{
+    border-radius: 10px;
+    background: linear-gradient(to right, #0084ff, #06ff30);
+    border: solid #05386b;
+}
+
+.btn_consult span,
+.btn_profile span{ 
+    font-weight: bold;
+    font-size: 14px;
+    color: black;
+    text-decoration: none;}
+

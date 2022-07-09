@@ -1,0 +1,39 @@
+{% extends "basic.html" %} {% load static %} {% block head %}
+
+<link rel="stylesheet" href="{% static 'css\sign_in.css' %}">
+
+{% endblock head%} {% block body %}
+
+
+<div class="main_frame">
+    <div class="container">
+        <header>Sign in as <span style="color: red;">Doctor</span></header>
+        <center>
+            <div>
+                {% for message in messages %}
+                <h3 style="color: red;">{{message}}</h3>
+                {% endfor %}
+            </div>
+        </center>
+        <form action="sign_in_doctor" method="POST">
+            {% csrf_token %}
+            <div class="input-field">
+                <input type="text" name="username" required>
+                <label>Email or Username</label>
+            </div>
+
+            <div class="input-field">
+                <input class="pswrd" type="password" name="password" required>
+                <label>Password</label>
+            </div>
+
+            <div class="btn">
+                <div class="inner"></div>
+                <button type="submit">LOGIN</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+{% endblock body%}

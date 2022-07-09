@@ -1,0 +1,79 @@
+{% extends 'basic.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'doctor\consultation\consultation_history.css' %}">
+
+
+{% endblock head %}
+
+
+{% block body %}
+
+
+
+
+<br>
+<center>
+    <h3 style="color: black;font-weight: bold;"> Consultion History </h3>
+</center>
+<div class="container mt-5 mb-3">
+    <br>
+
+    <table class="table table-hover table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>Patient name</th>
+                <th>Patient Email</th>
+                <th>View Patient's profile</th>
+                <th>Predicted Disease Name</th>
+                <th>Consultation Date</th>
+                <th>Consultation Status</th>
+                <th>Resume Consultation</th>
+            </tr>
+        </thead>
+
+        <tbody class="table_body">
+
+            {% for i in consultation %}
+
+
+            <tr>
+                <td style="color: #05386b;">{{i.patient.name}}</td>
+                <td style="color: #05386b;">{{i.patient.user.email}}</td>
+                <td style="width: 200px;">
+
+                    <form action="{% url 'pviewprofile' i.patient.user.username %}" method="GET">
+                        {% csrf_token %}
+                        <button type="submit" class="btn_profile"><span>View Profile</span></button>
+                    </form>
+
+                </td>
+
+                <td style="color: #05386b;">{{i.diseaseinfo.diseasename}}</td>
+                <td style="color: #05386b;">{{i.consultation_date}}</td>
+                <td style="color: #05386b;">{{i.status}}</td>
+
+                <td>
+
+                    <form action="{% url 'viewconsultation' i.id %}" method="GET">
+                        {% csrf_token %}
+                        <button type="submit"  class="btn_consult"> <span>Consult</span></button>
+                    </form>
+
+                </td>
+            </tr>
+
+
+            {% endfor %}
+
+
+        </tbody>
+    </table>
+
+
+
+</div>
+
+
+{% endblock body %}

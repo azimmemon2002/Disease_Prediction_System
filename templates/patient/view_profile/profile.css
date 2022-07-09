@@ -1,0 +1,131 @@
+.main_frame {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    background: linear-gradient(to right, #0084ff, #06ff30);
+    background-position: center;
+    border-radius: 0px;
+}
+
+.container {
+    display: flex;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    width: 600px;
+    flex-direction: column;
+    background: white;
+    padding: 1% 4%;
+    border-radius: 5px;
+    border: 1.5px solid;
+}
+
+.title_bar {
+    display: flex;
+    justify-content: center;
+    background: #00eeff;
+    height: 50px;
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+
+.title_bar label{
+    padding-bottom: 15px;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    padding-top: 12px;
+}
+
+
+.input-field {
+    display: flex;
+    display: -ms-flexbox;
+    margin-top: 20px;
+    position: relative;
+    height: 40px;
+    width: 100%;
+}
+
+.input-field input {
+    height: 100%;
+    width: 60%;
+    margin-left: 30%;
+    border: 1px solid silver;
+    padding-right: 15px;
+    outline: none;
+    font-size: 17px;
+    transition: .4s;
+    border-radius: 5px;
+    position: absolute;
+
+}
+
+input:focus {
+    border: 2px solid #1DA1F2;
+}
+
+.input-field label {
+    flex-direction: column-reverse;
+    left: 15px;
+    color: black;
+    font-size: 16px;
+    text-align: left;
+    padding-top: 13px;
+
+}
+
+
+.btn-group {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-direction: row;
+    margin-top: 30px;
+
+
+}
+
+.btn_edit,
+.btn_save {
+    width: 90px;
+    height: 40px;
+    text-decoration: none;
+    border-radius: 10px;
+    border: solid white;
+    background: linear-gradient(to right, #0084ff, #06ff30);
+
+}
+
+.btn_edit{
+
+    margin-left: 140px;
+    margin-right: 30px;
+}
+.btn_save{visibility: hidden;}
+
+
+.btn_edit:hover,
+.btn_save:hover {
+    border-radius: 10px;
+    background: linear-gradient(to right, #0084ff, #06ff30);
+    border: solid #05386b;
+}
+
+
+
+.btn_edit a {
+    font-weight: bold;
+    font-size: 14px;
+    color: white;
+    text-decoration: none;
+}
+
+.btn_save a {
+    font-weight: bold;
+    font-size: 14px;
+    color: white;
+    text-decoration: none;
+}

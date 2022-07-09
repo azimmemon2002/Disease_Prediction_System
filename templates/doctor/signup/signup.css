@@ -1,0 +1,172 @@
+.main_frame {
+   
+    height: auto;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    background: linear-gradient(to right, #0084ff, #06ff30);
+    background-position: center;
+    border-radius: 0px;
+}
+
+.container_frame {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    position: relative;
+    width: 670px;
+    background: white;
+    padding: 10px 40px;
+    border-radius: 5px;
+}
+
+.container_frame header {
+
+    font-size: 35px;
+    margin-top: px;
+    margin-bottom: 60px;
+    font-family: sans-serif;
+    text-align: center;
+    color: #05386b;
+
+}
+
+header span {
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.input-field,
+.btn,
+.input-field-date {
+    display: -ms-flexbox;
+    display: flex;
+    margin: 25px 0;
+    position: relative;
+    height: 50px;
+    width: 100%;
+}
+
+.input-field input,
+.input-field-date input {
+    height: 100%;
+    width: 100%;
+    border: 1px solid silver;
+    padding-right: 15px;
+    outline: none;
+    font-size: 17px;
+    transition: .4s;
+
+}
+
+input:focus {
+    border: 1px solid #1DA1F2;
+}
+
+.input-field label,
+.input-field-date label {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    margin-left: 60px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: gray;
+    font-size: 18px;
+    transition: .4s;
+
+}
+
+input:focus~label,
+input:valid~label {
+    transform: translateY(-37px);
+    background: white;
+    font-size: 16px;
+    color: #1DA1F2;
+
+}
+
+.btn {
+    align-content: center;
+    padding-right: 19px;
+
+    overflow: hidden;
+    z-index: 111;
+    border-radius: 5px;
+
+
+}
+
+.btn .inner {
+    position: absolute;
+    height: 100%;
+    width: 300%;
+    left: -100%;
+    z-index: -1;
+    transition: all .4s;
+    border-radius: 5px;
+    background: -webkit-linear-gradient(right, #0099ff, #06ff30, #0099ff, #06ff30)
+}
+
+.btn:hover .inner {
+    left: 0;
+}
+
+.btn button:hover {
+    color: black;
+}
+
+.btn button {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: none;
+    outline: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+/* Date css hide */
+
+
+
+.input-field-date input[type="date"]::before {
+    position: absolute;
+    color: #999999;
+}
+
+.input-field-date input[type="date"] {
+    color: #ffffff;
+}
+
+.input-field-date input[type="date"]:focus,
+.input-field-date input[type="date"]:valid {
+    color: #666666;
+}
+
+.input-field-date input[type="date"]:focus::before,
+.input-field-date input[type="date"]:valid::before {
+    content: "";
+}
+
+/* icon settings */
+.icon {
+    padding: 15px;
+    background: linear-gradient(to right, #0084ff, #06ff30);
+    color: black;
+    min-width: 55px;
+    text-align: center;
+}
+
+.input-field-radio {
+    border: 1px solid rgb(185, 185, 185);
+}
+
+.input-field-radio:hover {
+    border: 1px solid #1DA1F2;
+
+}

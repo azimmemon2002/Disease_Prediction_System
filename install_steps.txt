@@ -1,0 +1,30 @@
+|==> 1) Download first Database 
+        https://www.pgadmin.org/download/pgadmin-4-windows/
+        Download and install pgadmin
+
+|==> 2) go to predict_disease Folder and in that u find Settings.py
+|==> 3) now find database name dict if u want to change name of database then change 
+|==> 4) create new Database in pgadmin give name that is in setting.py
+
+|==> 5) remember Database name and pgadmin data base name has to same
+|==> 6) also add username and password
+
+
+|==> 7) install requirment.txt in virtual Environment
+
+|==> 8) Run python manage.py makemigrations
+|==> 9) Run python manage.py migrate
+
+|==> 10) Run python manage.py runserver
+|==> 11) Navigate to http://127.0.0.1:8000/ in your browser
+
+
+|==> if any error come in browser 
+|==> run this command
+|==> Run python manage.py migrate
+|==> Run python manage.py makemigrations
+
+now checkout project
+
+
+Happy Coding...👨‍💻

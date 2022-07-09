@@ -1,0 +1,8 @@
+https://www.kaggle.com/datasets/neelima98/disease-prediction-using-machine-learning/code
+https://www.kaggle.com/datasets/kaushil268/disease-prediction-using-machine-learning
+https://github.com/jini-the-coder/Diseaseprediction/blob/master/disease_prediction.py
+https://www.stackvidhya.com/pretty-print-dataframe/
+https://www.kaggle.com/code/ayushish12/disease-detection/notebook
+https://www.kaggle.com/code/kimmik123/computer-scientist-a-doctor/notebook
+https://www.rspsciencehub.com/article_9906.html
+https://www.codespeedy.com/disease-prediction-using-machine-learning-in-python-using-gui/

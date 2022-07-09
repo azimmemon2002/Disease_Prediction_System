@@ -1,0 +1,81 @@
+main {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.page-header h3 {
+    text-align: left;
+    text-decoration: none;
+    text-shadow: none;
+    font-size: 25px;
+    font-weight: bold;
+    color: #05386b;
+}
+
+.page-header h6 {
+    text-align: left;
+    text-decoration: none;
+    text-shadow: none;
+    padding-left: 7px;
+    font-weight: bold;
+    color: #05386b;
+}
+
+.page-header h3:hover {
+    color: red;
+}
+
+.navbar-nav .nav-item .nav-link {
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+    border-radius: 40px;
+    border: 3px solid #f8f9fa;
+}
+
+
+.navbar-nav .nav-item .nav-link:hover {
+    background-color: white;
+    border: solid #05386b;
+    color: red;
+}
+
+
+#logout,
+#signin,
+#signup{
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 40px;
+    border: solid white;
+    color: black;
+    background: linear-gradient(to right, #0084ff, #06ff30);
+    padding: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+    border: 3px solid #f8f9fa
+
+}
+
+
+#logout:hover,
+#signin:hover,
+#signup:hover {
+    border-radius: 40px;
+    color: white;
+    background: linear-gradient(to right, #0084ff, #06ff30);
+    border: solid #05386b;
+}
+
+#greting:hover {
+    color: white;
+}
+
+
+.box {
+    display: flex;
+}

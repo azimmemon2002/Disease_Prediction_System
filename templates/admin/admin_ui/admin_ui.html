@@ -1,0 +1,27 @@
+{% extends "basic.html" %} {% load static %} {% block head %}
+
+<link rel="stylesheet" href="{% static 'admin\admin_ui\admin_ui.css' %}" />
+
+{% endblock head%} {% block body %}
+
+
+
+<div class="main_frame">
+    <div class="greetings">
+        <h1>
+            <font style="color: rgb(24, 4, 95);">{{gretings}}</font> {{user.username}}
+        </h1>
+    </div>
+    <div class="card_body">
+        <a id ='admin_link' href="{% url 'admin:index' %}">
+            <h2>Manage user's data</h2>
+        </a>
+    </div>
+</div>
+
+
+
+
+
+
+{% endblock body%}

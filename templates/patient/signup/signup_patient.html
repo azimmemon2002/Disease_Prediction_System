@@ -1,0 +1,115 @@
+{% extends 'basic.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{% static 'patient\signup\signup.css' %}">
+
+
+
+{% endblock head %}
+
+{% block body %}
+
+<div class="main_frame">
+  <div class="container">
+    <header>Sign up as <span style="color: red;">Patient</span></header>
+    <center>
+      <div>
+        {% for message in messages %}
+        <div class="alert alert-warning" role="alert">
+          <h3 style="color: red;">{{message}}</h3>
+        </div>
+        {% endfor %}
+      </div>
+    </center>
+    <form action="sign_up_patient" method="POST">
+      {% csrf_token %}
+
+      <div class="input-field">
+        <i class="fa fa-user icon"></i>
+        <input type="text" name="username" required>
+        <label>Username</label>
+      </div>
+
+      <div class="input-field">
+        <i class="fa fa-user icon"></i>
+        <input type="text" name="name" required>
+        <label>Name</label>
+      </div>
+
+      <div class="input-field">
+        <i class="fa fa-envelope icon"></i>
+        <input type="email" name="email" required>
+        <label>Email</label>
+      </div>
+
+      <div class="input-field-date">
+        <i class="fa fa-calendar icon"></i>
+
+        <input type="date" name="dob" required>
+        <label>Date of Birth</label>
+      </div>
+
+      <div class="input-field">
+        <i class="fa fa-birthday-cake icon"></i>
+
+        <input type="number" name="age" required>
+        <label>Age</label>
+      </div>
+
+      <div class="input-field-radio">
+        <i class="fa fa-genderless icon"></i>
+        <input class="radio-btn" type="radio" name="gender" value="male" style="height:15px; width:15px; " checked>
+        <span style="font-size:16px;
+    padding-right:20px;padding-right:20px;">Male</span>
+        <input class="radio-btn" type="radio" name="gender" value="female" style="height:15px; width:15px; "> <span
+          style="font-size:16px;
+    padding-right:20px;">Female</span>
+        <input class="radio-btn" type="radio" name="gender" value="other" style="height:15px; width:15px; "> <span
+          style="font-size:16px;
+    padding-right:20px;">Other</span>
+
+      </div>
+
+      <div class="input-field">
+        <i class="fa fa-address-book icon"></i>
+
+        <input type="text" name="address" required>
+        <label>Address</label>
+      </div>
+
+      <div class="input-field">
+        <i class="fa fa-phone icon"></i>
+        <input type="tel" name="mobile" required>
+        <label>Mobile</label>
+      </div>
+
+      <div class="input-field">
+        <i class="fa fa-key icon"></i>
+
+        <input type="password" name="password" required>
+        <label>Password</label>
+      </div>
+
+      <div class="input-field">
+        <i class="fa fa-check icon"></i>
+
+        <input type="password" name="re_password" required>
+        <label>Retype Password</label>
+      </div>
+      <div class="btn" id="">
+        <div class="inner"></div>
+        <button type="submit">Submit</button>
+      </div>
+
+    </form>
+
+
+  </div>
+
+
+
+
+</div>
+{% endblock body %}

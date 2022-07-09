@@ -1,0 +1,101 @@
+{% extends "basic.html" %} {% load static %} {% block head %}
+
+<link rel="stylesheet" href="{% static 'patient\view_profile\profile.css' %}" />
+
+{% endblock head %} {% block body %}
+
+<div class="main_frame">
+  <div class="container">
+    <div class="title_bar">
+      <label id="title">
+        Patient Profile - <span>{{puser.patient.name}}</span></label
+      >
+    </div>
+    <form action="{% url 'savePdata' %}" method="POST">
+      {% csrf_token %}
+      <div class="input-field">
+        <label>Name</label>
+        <input
+          id="in1"
+          type="text"
+          name="name"
+          value="{{puser.patient.name}}"
+          style="pointer-events: none"
+        />
+      </div>
+
+      <div class="input-field">
+        <label>Date of Birth</label>
+        <input
+          id="in2"
+          type="date"
+          name="dob"
+          value="{{puser.patient.dob|date:'Y-m-d'}}"
+          style="pointer-events: none"
+        />
+      </div>
+
+      <div class="input-field">
+        <label>Gender</label>
+        <input
+          id="in3"
+          type="text"
+          name="gender"
+          value="{{puser.patient.gender}}"
+          style="pointer-events: none"
+        />
+      </div>
+
+      <div class="input-field">
+        <label>Mobile No</label>
+        <input
+          id="in4"
+          type="text"
+          name="mobile_no"
+          value="{{puser.patient.mobile_no}}"
+          style="pointer-events: none"
+        />
+      </div>
+
+      <div class="input-field">
+        <label>Address</label>
+        <input
+          id="in5"
+          type="text"
+          name="address"
+          value="{{puser.patient.address}}"
+          style="pointer-events: none"
+        />
+      </div>
+
+      <div class="btn-group">
+        <button
+          type="button"
+          id="edit"
+          class="btn_edit"
+          onclick="EnableButton();"
+        >
+          <a style="color: white">Edit</a>
+        </button>
+        <button type="submit" id="save" class="btn_save"><a>Save</a></button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+  function EnableButton() {
+    document.getElementById("save").style.visibility = "visible";
+    for (var i = 1; i < 6; i++) {
+      name = "in" + i;
+      document.getElementById(name).style["pointer-events"] = "";
+    }
+  }
+</script>
+
+{% if status == False %}
+<script>
+  document.getElementsByClassName('btn-group')[0].style.visibility = 'hidden';
+</script>
+{% endif %}
+{% endblock body %}

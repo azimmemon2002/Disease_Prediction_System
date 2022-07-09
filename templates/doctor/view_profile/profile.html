@@ -1,0 +1,106 @@
+{% extends "basic.html" %} {% load static %} {% block head %}
+
+<link rel="stylesheet" href="{% static 'doctor\view_profile\profile.css' %}" />
+
+
+{% endblock head %} {% block body %}
+
+<div class="main_frame">
+  <div class="container">
+    <div class="title_bar">
+      <label id="title">
+        Doctor Profile - <span>{{duser.doctor.name}}</span></label>
+    </div>
+    <form action="{% url 'saveDdata' %}" method="POST">
+      {% csrf_token %}
+      <div class="input-field" id="if1">
+        <label>Name</label>
+        <input id="in1" type="text" name="name" value="{{duser.doctor.name}}" style="pointer-events: none" />
+      </div>
+
+      <div class="input-field" id="if2">
+        <label>Date of Birth</label>
+        <input id="in2" type="date" name="dob" value="{{duser.doctor.dob|date:'Y-m-d'}}" style="pointer-events: none" />
+      </div>
+
+      <div class="input-field" id="if3">
+        <label>Gender</label>
+        <input id="in3" type="text" name="gender" value="{{duser.doctor.gender}}" style="pointer-events: none" />
+      </div>
+
+      <div class="input-field" id="if4">
+        <label>Mobile No</label>
+        <input id="in4" type="text" name="mobile_no" value="{{duser.doctor.mobile_no}}" style="pointer-events: none" />
+      </div>
+
+      <div class="input-field" id="if5">
+        <label>Address</label>
+        <input id="in5" type="text" name="address" value="{{duser.doctor.address}}" style="pointer-events: none" />
+      </div>
+
+      <div class="input-field" id="if6">
+        <label>Registration-No</label>
+        <input id="in6" type="text" name="registration_no" value="{{duser.doctor.registration_no}}"
+          style="pointer-events: none" />
+      </div>
+
+      <div class="input-field" id="if7">
+        <label>Year of Registration</label>
+        <input id="in7" type="date" name="year_of_registration"
+          value="{{duser.doctor.year_of_registration|date:'Y-m-d'}}" style="pointer-events: none" />
+      </div>
+
+      <div class="input-field" id="if8">
+        <label>Qualification</label>
+        <input id="in8" type="text" name="qualification" value="{{duser.doctor.qualification}}"
+          style="pointer-events: none" />
+      </div>
+
+      <div class="input-field" id="if9">
+        <label>State medical council</label>
+        <input id="in9" type="text" name="state_medical_council" value="{{duser.doctor.state_medical_council}}"
+          style="pointer-events: none" />
+      </div>
+
+      <div class="input-field" id="if10">
+        <label>Specialization</label>
+        <input id="in10" type="text" name="specialization" value="{{duser.doctor.specialization}}"
+          style="pointer-events: none" />
+      </div>
+
+
+
+      <div class="btn-group">
+        <button type="button" id="edit" class="btn_edit" onclick="EnableButton();">
+          <a style="color: white">Edit</a>
+        </button>
+        <button type="submit" id="save" class="btn_save"><a>Save</a></button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+  function EnableButton() {
+    document.getElementById("save").style.visibility = "visible";
+    for (var i = 1; i < 11; i++) {
+      name = "in" + i;
+      document.getElementById(name).style["pointer-events"] = "";
+    }
+  }
+
+
+</script>
+{% if status == False %}
+<script>
+  document.getElementsByClassName('btn-group')[0].style.visibility = 'hidden';
+  const numbers = [2, 5, 6, 7];
+  numbers.forEach(hide_info);
+  function hide_info(value) {
+    name = "if" + value;
+    document.getElementById(name).style.display = "none";
+  }
+</script>
+{% endif %}
+
+{% endblock body %}

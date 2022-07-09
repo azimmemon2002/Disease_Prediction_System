@@ -1,0 +1,190 @@
+body {
+
+    background: linear-gradient(to right, #0084ff, #06ff30);
+}
+
+
+.head_line {
+
+    color: #020824;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.drop_content {
+    margin-left: 12%;
+    left: 10%;
+    right: 10%;
+    display: none;
+    background-color: #fdffff;
+    text-shadow: 0px 1px 20px rgb(7, 97, 231);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+
+}
+
+
+.dropdown-item {
+    position: relative;
+    min-width: 100px;
+    text-align: center !important;
+    width: auto !important;
+    display: inline-block;
+    cursor: pointer;
+    clear: both;
+    text-align: center;
+    border: 0;
+    margin: 10px !important;
+    background-color: #fdffff;
+    /* background-color: ; */
+    text-shadow: 0px 1px 20px rgba(11, 2, 66, 0.78);
+    box-shadow: 0px 8px 16px 0px rgba(3, 169, 244, 0.05);
+
+    line-height: 2;
+    padding: 4px !important;
+
+}
+
+.show {
+    display: inline-block;
+}
+
+#symptoms-box {
+    position: static;
+    margin-left: 20%;
+    margin-right: 20%;
+    text-align: center;
+
+    /*background-color: #e9ecef !important;*/
+    background-color: white !important;
+    min-height: 300px;
+
+    padding: 10px 10px 10px 10px;
+    border: 1px solid black;
+
+
+}
+
+#searchbar {
+    margin-left: 35%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #1DA1F2;
+    width: 30%;
+}
+
+#searchbar:hover {
+    border: 1px solid #1DA1F2;
+}
+
+#search-bar {
+    padding: 40px;
+
+}
+
+.symptoms {
+    border: 1px solid #1DA1F2;
+    border-radius: 10px;
+    margin-top: 12px;
+    align-items: center;
+    margin-left: 40%;
+    margin-right: 40%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+    background-color: #fdffff;
+    text-shadow: 0px 1px 20px rgba(3, 169, 244, 0.78);
+    box-shadow: 0px 8px 16px 0px rgba(78, 191, 243, 0.05);
+
+}
+
+.card-header,
+.card-footer {
+    border: 1px solid orange;
+    color: #020824;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#predict,
+#clear {
+    margin-right: 20px;
+    /*color: #05386b;*/
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 10px;
+    border: solid white;
+    color: black;
+    background: linear-gradient(to right, #0084ff, #06ff30);
+}
+
+#predicted-data {
+
+    position: static;
+    margin-left: 20%;
+    margin-right: 20%;
+    text-align: center;
+    background-color: white !important;
+    min-height: 300px;
+    padding: 10px 10px 10px 10px;
+    border: 1px solid black;
+
+
+}
+
+.card-header2 {
+    border: 1px solid #1DA1F2;
+    color: #020824;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding: 5px;
+    border-radius: 5px;
+
+}
+
+span.diseasefield {
+    font-size: 20px;
+
+
+
+}
+
+.warning_tagline {
+    margin-top: -20px;
+    color: #020824;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#g_search {
+    border: 1px solid black;
+    background-color: white;
+    color: red;
+}
+
+#diseasesearch {
+    color: red;
+}
+
+#add_symptom {
+    background-color: white;
+    border: 2px solid #ff6600;
+    color: #020824;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#consultbtn {
+    border: 1px solid black;
+    background-color: white;
+    color: red;
+    font-weight: bold;
+
+}
+
+#consultdoctor {
+    font-weight: bold;
+    color: #020824;
+}

@@ -1,0 +1,45 @@
+{% extends "basic.html" %} {% load static %} {% block head %}
+
+<link rel="stylesheet" href="{% static 'doctor/doctor_ui/profile.css' %}">
+
+{% endblock head%} {% block body %}
+<div class="main_frame">
+    <center>
+        <div>
+            {% for message in messages %}
+            <h3 style="color: red;">{{message}}</h3>
+            {% endfor %}
+        </div>
+    </center>
+    <div class="split left">
+        <div class="card_body">
+            <img class="card_img_top" src="{% static 'img\profile.png' %}" alt="Card image">
+            <div class="card_container">
+                <h4 class="card_title">Doctor name : {{duser.doctor.name}} </h4>
+                <p class="card_text">Doctor ID - {{duser.doctor.user_id}}</p>
+                <p class="card_text">Doctor email - {{duser.email}}</p>
+
+                <a href="{% url 'dviewprofile' duser.username %}" class="card_btn">View Profile</a>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="split right">
+        <div class="content_links">
+            <a href="{% url 'predict_disease' %}"> Disease Prediction</a>
+            <br>
+            <a href="{% url 'dconsultation_history' duser.doctor.name %}"> View Consulation History</a>
+
+        </div>
+
+
+    </div>
+
+
+
+</div>
+
+
+
+{% endblock body %}

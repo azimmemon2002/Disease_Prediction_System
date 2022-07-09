@@ -1,0 +1,27 @@
+{% extends 'basic.html' %} {% load static %} {% block head %}
+
+<link rel="stylesheet" href="{% static 'homepage\index.css' %}" />
+{% endblock head %}
+
+
+{% block body %}
+<div class="main_frame">
+
+  <h1>
+    <font style="color: rgb(24, 4, 95);">{{gretings}}</font> {{ user.username}}
+  </h1>
+
+  <div class="card_body">
+
+    <p class="intro"> Disease Analysis and Prediction System is an End-user Project that help you to Analysis your
+      Symptoms then
+      Predicate Disease using
+      Machine learning algorithm. This System fed with various symptoms and disease/illness associated with those
+      Symptoms. The User will be
+      able to share their symptoms and the system will process the patient’s symptoms to check for various illness that
+      could be associated with it.</p>
+  </div>
+
+</div>
+
+{% endblock body %}
