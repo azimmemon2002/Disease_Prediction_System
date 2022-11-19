@@ -1,6 +1,8 @@
 # Disease_Prediction_System
 Disease Analysis and Prediction System is an End-user Project that help you to Analysis your Symptoms then Predicate Disease using Machine learning algorithm. This System fed with various symptoms and disease/illness associated with those Symptoms. The User will be able to share their symptoms and the system will process the patient’s symptoms to check for various illness that could be associated with it.
 
+# Live-Demo: https://azimmemon2002.onrender.com/Diseaseappdemo/
+
 # Installation Step
 1) Create python Virtual environment
 2) install requirement.txt in environment
